@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { SquareComponent } from "../square/square.component";
-import { NgIf } from '@angular/common';
+import { NgForOf, NgIf} from '@angular/common';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
+  standalone: true,
   selector: 'ttt-board',
-  imports: [SquareComponent, NgIf],
+  imports: [SquareComponent, NgIf, CommonModule],
   templateUrl: './board.component.html',
-  styleUrl: './board.component.css'
+  styleUrl: './board.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BoardComponent implements OnInit{
 
-  squares!: any [];
+  squares!: string[];
   xIsNext!: boolean;
   winner!: string;
 

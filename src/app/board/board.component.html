@@ -8,11 +8,14 @@
     </h2>
 
     <main>
-        <ttt-square
+        <div>
+            <ttt-square
             *ngfor="let val of squares; let i = index"
             [value]="val"
             (click)="makeMove(i)">    
         </ttt-square>
+        </div>
+       
     
     </main>
 </div>
