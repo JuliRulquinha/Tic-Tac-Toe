@@ -1,14 +1,70 @@
+
 .main{
+    margin: 15px;
     display: grid;
     grid-template-columns: 200px 200px 200px;
     grid-gap: 0px;
+    background-color: rgb(255, 0, 221);
 }
 ttt-square{
-    border: 1px solid pink;
+    border: 5px solid rgb(255, 0, 221);
     height: 200px;
+    border-radius: 5px;
 }
 
 .container{
     height: 500px;
     width: 500px;
+}
+
+.newGamebtn{
+    margin: 15px;
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: rgb(255, 238, 0);
+    color: rgb(255, 0, 234);
+    border-radius: 5px;
+    border: solid 3px rgb(255, 0, 212)
+}
+
+.restart{
+    color: rgb(255, 136, 0);
+    text-shadow: 
+        -2px -2px 0 rgb(255, 255, 255), /* Topo esquerdo */
+        2px -2px 0 rgb(255, 255, 255), /* Topo direito */
+        -2px  2px 0 rgb(255, 255, 255), /* Base esquerda */
+        2px  2px 0 rgb(255, 255, 255); /* Base direita */
+    margin: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.titles{
+    text-shadow: 
+        -2px -2px 0 rgb(255, 255, 255), /* Topo esquerdo */
+        2px -2px 0 rgb(255, 255, 255), /* Topo direito */
+        -2px  2px 0 rgb(255, 255, 255), /* Base esquerda */
+        2px  2px 0 rgb(255, 255, 255); /* Base direita */
+    margin: 15px;
+    color: rgb(0, 149, 248);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.titles2{
+    text-shadow: 
+        -2px -2px 0 rgb(255, 255, 255), /* Topo esquerdo */
+        2px -2px 0 rgb(255, 255, 255), /* Topo direito */
+        -2px  2px 0 rgb(255, 255, 255), /* Base esquerda */
+        2px  2px 0 rgb(255, 255, 255); /* Base direita */
+    margin: 15px;
+    color: rgb(248, 0, 0);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.is-even{
+    background-color: grey!important;
 }

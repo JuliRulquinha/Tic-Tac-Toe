@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { SquareComponent } from "./square/square.component";
+//import { SquareComponent } from "./square/square.component";
 import { BoardComponent } from "./board/board.component";
 
 @Component({
   selector: 'app-root',
-  imports: [SquareComponent, BoardComponent],
+  imports: [BoardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

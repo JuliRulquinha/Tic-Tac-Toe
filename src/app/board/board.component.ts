@@ -1,13 +1,13 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { SquareComponent } from "../square/square.component";
-import { NgForOf, NgIf} from '@angular/common';
+//import { NgForOf, NgIf} from '@angular/common';
 import { CommonModule } from '@angular/common';
 
 
 @Component({
   standalone: true,
   selector: 'ttt-board',
-  imports: [SquareComponent, NgIf, CommonModule],
+  imports: [SquareComponent, CommonModule],
   templateUrl: './board.component.html',
   styleUrl: './board.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -17,19 +17,21 @@ export class BoardComponent implements OnInit{
   squares!: string[];
   xIsNext!: boolean;
   winner!: string;
+  isActive: boolean = true;
 
   constructor(){
 
   }
 
   ngOnInit(){
-    this.newGame
+    this.newGame();
   }
 
   newGame(){
     this.squares = Array(9).fill(null);
     this.winner = '';
     this.xIsNext = true;
+    this.isActive = true;
 
   }
 
@@ -42,6 +44,12 @@ export class BoardComponent implements OnInit{
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
     }
+    this.winner = this.calculateWinner();
+    if(this.winner !== ''){
+      this.isActive = false;
+      
+    }
+
   }
 
   calculateWinner(){
@@ -66,8 +74,9 @@ export class BoardComponent implements OnInit{
       }
 
     }
-    return '';
+    return this.winner;
   }
+  
 }
 
 

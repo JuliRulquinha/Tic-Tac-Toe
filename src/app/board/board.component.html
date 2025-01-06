@@ -1,20 +1,23 @@
 <div class="container">
-    <h1>Current Player: {{ player }}</h1>
+    <h1 class="titles">Current Player: {{ player }}</h1>
 
-    <button (click)="newGame()">new game</button>
-
-    <h2 *ngIf="winner">
-        Player {{winner}} won the game!
-    </h2>
-
-    <main>
-        <div>
-            <ttt-square
-            *ngfor="let val of squares; let i = index"
+    <button class="newGamebtn" (click)="newGame()">new game</button>
+    <div>
+        <h2 class="titles2" *ngIf="winner">
+            Player {{winner}} won the game!  
+        </h2>
+    <p class="restart" *ngIf="winner">Press "new game" to restart.</p>
+</div>
+    
+    <main class="main">
+        
+        <ttt-square 
+            [isActive]="isActive"
+            *ngFor="let val of squares; let i = index"
             [value]="val"
             (click)="makeMove(i)">    
         </ttt-square>
-        </div>
+        
        
     
     </main>

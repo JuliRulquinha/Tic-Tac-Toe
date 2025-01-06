@@ -6,12 +6,12 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   selector: 'ttt-square',
   imports: [CommonModule],
-  template: `<button>{{ value }}</button>`,
+  template: `<button class="square-btn" [disabled]="!isActive">{{ value }}</button>`,
   styleUrl: './square.component.css'
 })
 export class SquareComponent {
   @Input() value!: string; 
-
+  @Input() isActive!: boolean;
   
 
   constructor(){
