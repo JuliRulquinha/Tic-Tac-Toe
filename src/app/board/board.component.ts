@@ -19,6 +19,7 @@ export class BoardComponent implements OnInit{
   winner!: string;
   isActive: boolean = true;
   isDraw: boolean = false;
+ 
 
   constructor(){
 
@@ -33,6 +34,7 @@ export class BoardComponent implements OnInit{
     this.winner = '';
     this.xIsNext = !this.xIsNext;
     this.isActive = true;
+    this.isDraw = false;
 
   }
 
