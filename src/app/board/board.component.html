@@ -6,6 +6,9 @@
         <h2 class="titles2" *ngIf="winner">
             Player {{winner}} won the game!  
         </h2>
+        <h2 class="titles2" *ngIf="isDraw">
+           It's a draw!
+        </h2>
     <p class="restart" *ngIf="winner">Press "new game" to restart.</p>
 </div>
     

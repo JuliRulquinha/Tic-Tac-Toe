@@ -15,9 +15,10 @@ import { CommonModule } from '@angular/common';
 export class BoardComponent implements OnInit{
 
   squares!: string[];
-  xIsNext!: boolean;
+  xIsNext: boolean = false;
   winner!: string;
   isActive: boolean = true;
+  isDraw: boolean = false;
 
   constructor(){
 
@@ -30,7 +31,7 @@ export class BoardComponent implements OnInit{
   newGame(){
     this.squares = Array(9).fill(null);
     this.winner = '';
-    this.xIsNext = true;
+    this.xIsNext = !this.xIsNext;
     this.isActive = true;
 
   }
@@ -44,11 +45,16 @@ export class BoardComponent implements OnInit{
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
     }
+
     this.winner = this.calculateWinner();
+
     if(this.winner !== ''){
       this.isActive = false;
-      
+      this.xIsNext = !this.xIsNext;
+    }else if(this.squares.every((s)=> s !== null)){
+      this.isDraw = true;
     }
+
 
   }
 
@@ -72,7 +78,6 @@ export class BoardComponent implements OnInit{
       ) {
         return this.squares[a];
       }
-
     }
     return this.winner;
   }
